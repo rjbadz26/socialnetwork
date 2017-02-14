@@ -12,5 +12,26 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users.login');
 });
+Route::get('/login', function () {
+    return view('users.login');
+});
+
+// USER ROUTES
+Route::get('/register','UsersController@getRegister');
+Route::post('/register','UsersController@postRegister');
+Route::post('/login','UsersController@postLogin');
+Route::get('/logout','UsersController@getLogout');
+/*Route::get('/home','UsersController@getHome');*/
+
+// POST ROUTES
+/*Route::get('/home',['uses' => 'PostsController@getHome']);*/
+Route::get('/home',['uses' => 'PostsController@getHome',
+					'middleware' => 'auth'
+					]);
+Route::get('/posts','PostsController@getPosts');
+Route::post('/addPost', 'PostsController@addPost');
+
+// COMMENT ROUTES
+Route::post('/addComment', 'CommentsController@addComment');
