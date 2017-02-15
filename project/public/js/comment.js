@@ -15,7 +15,6 @@ function doRun(){
 	})
 	.done(function(){
 		$('#posts').load(urlDisplayPosts);
-		$('.comment_content').val('');
 	});
 	});
 

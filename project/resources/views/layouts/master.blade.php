@@ -18,15 +18,6 @@
 		@include('includes.header')
 		@yield('content')
 	</div>
-
-	<script>
-		var userId = "{{ Auth::user()->id }}";
-		var token = "{{ Session::token() }}";
-		var urlPost = "{{ url('/addPost') }}";
-		var urlComment = "{{ url('/addComment') }}";
-		var urlDisplayPosts = "{{ url('/posts') }}";
-	</script>
 	
-	<script type="text/javascript" src="{{ url('js/main.js') }}"></script>
 </body>
 </html>
