@@ -10,8 +10,8 @@
 	<br>
 	<br>
 	<div class="col-md-4 col-md-offset-4">
-	@if(Session::has('message'))
-		<div class="alert alert-danger text-center">{{ Session::get('message') }}</div>
+	@if(Session::has('err_message'))
+		<div class="alert alert-danger text-center">{{ Session::get('err_message') }}</div>
 	@endif()
 	<div class="panel panel-default">
 		<div class="panel-heading">Login</div>

@@ -1,15 +1,27 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Social Network</a>
+    <div class="navbar-header col-md-3">
+      <a class="navbar-brand" href="{{ url('/home') }}">Social Network</a>
     </div>
-    <ul class="nav navbar-nav pull-right">
-      <!-- <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li> -->
-      <li><a href="{{ url('/') }}">Login</a></li>
+    
+    @if(Auth::check())
+      <form id="search" class="form-inline col-md-6" action="{{ url('/search') }}">
+        <div class="form-group">
+          <input id="search_val" class="form-control" type="text" name="search" value="<?php if(isset($_GET['search'])){ echo $_GET['search']; } ?>" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-primary pull-right" >Search</button>
+      </form>
+    @endif
+
+    @if(Auth::check())
+      <ul class="nav navbar-nav col-md-1 col-md-offset-2 pull-right">
+      <li><a href="{{ url('/logout') }}">Logout</a></li>
+      </ul>
+    @else
+      <ul class="nav navbar-nav col-md-1 col-md-offset-2 pull-right">
       <li><a href="{{ url('/register') }}">Register</a></li>
-    </ul>
+      </ul>
+    @endif
+    
   </div>
 </nav>

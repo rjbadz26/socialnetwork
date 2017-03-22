@@ -1,0 +1,15 @@
+form#search{
+	margin-top: 8px;
+}
+
+form#search div input{
+	width: 430px;
+}
+
+.rel_btn{
+	margin-left: 300px;
+}
+
+#rel_tbl{
+	margin: 0 auto;
+}

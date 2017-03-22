@@ -24,4 +24,9 @@ class User extends Model implements Authenticatable
     	return $this->hasMany('App\Comment');
     }
 
+    public function relationships(){
+        //return $this->belongsTo('App\Relationship');
+        return $this->hasMany('App\Relationship','action_user_id');
+    }
+
 }

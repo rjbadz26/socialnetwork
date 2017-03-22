@@ -23,7 +23,8 @@ Route::get('/register','UsersController@getRegister');
 Route::post('/register','UsersController@postRegister');
 Route::post('/login','UsersController@postLogin');
 Route::get('/logout','UsersController@getLogout');
-/*Route::get('/home','UsersController@getHome');*/
+Route::get('/search','UsersController@searchUsers');
+Route::post('/updateRel','UsersController@updateRel');
 
 // POST ROUTES
 /*Route::get('/home',['uses' => 'PostsController@getHome']);*/

@@ -23,6 +23,7 @@
 
 		<br><br><hr><br><br>	
 		
+		<!-- display all posts -->
 		<div id="posts"></div>
 
 		<br><br>
